@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_feature_flag_1/components/button.dart';
 import 'package:flutter_feature_flag_1/screens/contacts/contacts_list.dart';
 import 'package:flutter_feature_flag_1/screens/contacts/v2/contacts_list.dart'
@@ -5,8 +7,9 @@ import 'package:flutter_feature_flag_1/screens/contacts/v2/contacts_list.dart'
 import 'package:flutter_feature_flag_1/screens/payments/payments_list.dart';
 import 'package:flutter/material.dart';
 
-const _titleAppBar = 'Feature Flag With Firebase Remote Config';
+const _titleAppBar = 'Feature Flag With Realtime Database';
 
+/*
 class Dashboard extends StatelessWidget {
   final bool contactFlag = true;
 
@@ -38,15 +41,37 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
+*/
 
-/*
 class Dashboard extends StatefulWidget {
+  Dashboard(this.app);
+
+  final FirebaseApp app;
+
   @override
   _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
-  final bool contactFlag = false;
+  List<String> features = [];
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint('initState');
+    _fetchFeatureFlag();
+  }
+
+  void _fetchFeatureFlag() {
+    final DatabaseReference db = FirebaseDatabase(app: widget.app).reference();
+    db.child('features').once().then((result) {
+      final List<Object?> values = result.value;
+      values.forEach((val) => features.add(val.toString()));
+      setState(() {
+        features = features;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +89,15 @@ class _DashboardState extends State<Dashboard> {
               spacing: 10,
               runSpacing: 10,
               children: [
-                Button('Payments', Icons.monetization_on,
-                    PaymentsList()),
-                contactFlag
-                    ? Button('Contacts V2', Icons.nature_people_outlined,
-                        v2.ContactsList())
-                    : Button('Contacts V1', Icons.people, ContactsList())
+                features.contains('contactsV2')
+                    ? Button('Contacts V2', Icons.people_alt_outlined,
+                        onTap: () =>
+                            _navigateToWidget(context, v2.ContactsList()))
+                    : Button('Contacts', Icons.people,
+                        onTap: () =>
+                            _navigateToWidget(context, ContactsList())),
+                Button('Payments', Icons.monetization_on_outlined,
+                    onTap: () => _navigateToWidget(context, PaymentsList()))
               ],
             ),
           )
@@ -77,5 +105,9 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
+
+  void _navigateToWidget(BuildContext context, Widget routeWidget) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => routeWidget));
+  }
 }
-*/
