@@ -8,8 +8,8 @@ const _labelFieldName = 'Name';
 const _hintFieldName = 'First Name';
 const _labelFieldSurname = 'Surname';
 const _hintFieldSurname = 'Last Name';
-const _labelFieldAccountNumber = 'Account';
-const _hintFieldAccountNumber = '0000';
+const _labelFieldAccountNumber = 'Account Number';
+const _hintFieldAccountNumber = '0000000';
 const _labelButtonConfirm = 'Confirm';
 
 class ContactForm extends StatelessWidget {

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 const _titleAppBar = 'Feature Flag With Firebase Remote Config';
 
 class Dashboard extends StatelessWidget {
-  final bool contactFlag = false;
+  final bool contactFlag = true;
 
   @override
   Widget build(BuildContext context) {

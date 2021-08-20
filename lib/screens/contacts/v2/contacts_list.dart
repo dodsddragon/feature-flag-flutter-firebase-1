@@ -83,11 +83,13 @@ class _ContactItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-          trailing: Text(contact.accountNumber.toString(),
-              style: TextStyle(fontSize: 16)),
+          leading: Icon(Icons.account_box, size: 56,),
           title: Text(contact.name, style: TextStyle(fontSize: 24)),
-          subtitle:
-              Text(contact.surname != null ? contact.surname.toString() : '', style: TextStyle(fontSize: 24))),
+          subtitle: Text(
+              contact.surname != null ? contact.surname.toString() : '',
+              style: TextStyle(fontSize: 24)),
+          trailing: Text('Account N.: ' + contact.accountNumber.toString(),
+              style: TextStyle(fontSize: 16))),
     );
   }
 }
