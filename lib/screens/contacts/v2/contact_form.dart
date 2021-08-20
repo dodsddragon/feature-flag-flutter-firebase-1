@@ -1,6 +1,6 @@
-import 'package:bytebank/components/editor.dart';
-import 'package:bytebank/database/dao/contact_dao.dart';
-import 'package:bytebank/models/contact.dart';
+import 'package:flutter_feature_flag_1/components/editor.dart';
+import 'package:flutter_feature_flag_1/database/dao/contact_dao.dart';
+import 'package:flutter_feature_flag_1/models/contact.dart';
 import 'package:flutter/material.dart';
 
 const _titleAppBar = 'New contact V2';
@@ -32,20 +32,20 @@ class ContactForm extends StatelessWidget {
           child: Column(
             children: [
               Editor(
-                  controlador: _controllerFieldName,
-                  rotulo: _labelFieldName,
-                  dica: _hintFieldName,
-                  icone: Icon(Icons.emoji_people)),
+                  controller: _controllerFieldName,
+                  title: _labelFieldName,
+                  hint: _hintFieldName,
+                  icon: Icon(Icons.emoji_people)),
               Editor(
-                  controlador: _controllerFieldSurname,
-                  rotulo: _labelFieldSurname,
-                  dica: _hintFieldSurname,
-                  icone: Icon(Icons.people)),
+                  controller: _controllerFieldSurname,
+                  title: _labelFieldSurname,
+                  hint: _hintFieldSurname,
+                  icon: Icon(Icons.people)),
               Editor(
-                controlador: _controllerFieldAccountNumber,
-                rotulo: _labelFieldAccountNumber,
-                dica: _hintFieldAccountNumber,
-                icone: Icon(Icons.house),
+                controller: _controllerFieldAccountNumber,
+                title: _labelFieldAccountNumber,
+                hint: _hintFieldAccountNumber,
+                icon: Icon(Icons.house),
                 textInputType: TextInputType.number,
               ),
               Padding(

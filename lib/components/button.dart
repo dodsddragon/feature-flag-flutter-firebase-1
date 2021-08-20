@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Botao extends StatelessWidget {
-  final String _nome;
-  final IconData _icone;
+class Button extends StatelessWidget {
+  final String _name;
+  final IconData _icon;
   final Widget _routeWidget;
 
-  Botao(this._nome, this._icone, this._routeWidget);
+  Button(this._name, this._icon, this._routeWidget);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class Botao extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(_icone, color: Colors.white, size: 24.0),
-                Text(_nome,
+                Icon(_icon, color: Colors.white, size: 24.0),
+                Text(_name,
                     style: TextStyle(color: Colors.white, fontSize: 16.0)),
               ],
             )),

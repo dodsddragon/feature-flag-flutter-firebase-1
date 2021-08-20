@@ -1,4 +1,3 @@
-import 'package:flutter_feature_flag_1/screens/payments/payment_form.dart';
 import 'package:flutter/material.dart';
 
 class PaymentsList extends StatelessWidget {
@@ -20,10 +19,7 @@ class PaymentsList extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => PaymentForm()));
-        },
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
     );

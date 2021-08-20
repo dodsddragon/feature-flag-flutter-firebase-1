@@ -28,15 +28,15 @@ class ContactForm extends StatelessWidget {
           child: Column(
             children: [
               Editor(
-                  controlador: _controladorCampoNome,
-                  rotulo: _rotuloCampoNome,
-                  dica: _dicaCampoNome,
-                  icone: Icon(Icons.people)),
+                  controller: _controladorCampoNome,
+                  title: _rotuloCampoNome,
+                  hint: _dicaCampoNome,
+                  icon: Icon(Icons.people)),
               Editor(
-                controlador: _controladorCampoNumeroConta,
-                rotulo: _rotuloCampoNumeroConta,
-                dica: _dicaCampoNumeroConta,
-                icone: Icon(Icons.house),
+                controller: _controladorCampoNumeroConta,
+                title: _rotuloCampoNumeroConta,
+                hint: _dicaCampoNumeroConta,
+                icon: Icon(Icons.house),
                 textInputType: TextInputType.number,
               ),
               Padding(
