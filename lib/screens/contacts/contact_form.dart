@@ -56,7 +56,7 @@ class ContactForm extends StatelessWidget {
                           if (numberOfCreatedRows > 0) {
                             Navigator.pop(context);
                           } else {
-                            debugPrint('V2 Fail to add the contact: $contact');
+                            debugPrint('Fail to add the contact: $contact');
                           }
                         });
                       }),

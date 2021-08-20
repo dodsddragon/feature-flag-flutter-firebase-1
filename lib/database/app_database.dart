@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:flutter_feature_flag_1/database/dao/contact_dao.dart';
 
 Future<Database> getDatabase() async {
-  return openDatabase(join(await getDatabasesPath(), 'bytebank.db'),
+  return openDatabase(join(await getDatabasesPath(), 'feature_flag_1.db'),
       onCreate: (db, version) {
         db.execute(ContactDao.tableSql);
       },
