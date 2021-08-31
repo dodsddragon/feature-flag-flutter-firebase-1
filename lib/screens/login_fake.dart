@@ -6,7 +6,7 @@ import 'package:flutter_feature_flag_1/screens/dashboard.dart';
 const _buttonTitle = 'Login';
 const _labelFieldPassword = 'Password';
 const _labelFieldUser = 'Username';
-const _titleAppBar = 'Login Fake';
+const _titleAppBar = 'Login Fake 1';
 
 class LoginFakeForm extends StatelessWidget {
   final FirebaseApp app;
